@@ -40,8 +40,29 @@
     ※ Thread や Runnable を利用するとスレッドのライフサイクル管理が面倒(生成して、終了してというのを自身で管理する必要がある)
     Executor を利用するとそのあたりやってくれる。また、スレッドをプールしておいてくれる。
  
-
 ## スレッドダンプの取得方法
+    1. kill -3 シグナルを送信する
+	「kill -3 <pid>」
+	※ JDK がインストールされていない環境で利用可
+    2. jstack を利用する
+	「jstack <pid>」
+    3. jcmd Thread.print を利用する
+	「jcmd <pid> Thread.print」
+
+    以下はスレッドダンプではないが、スレッドの実行状態が確認できる。
+    自身の環境などではこちらのほうが便利。
+
+    4. jconsole を利用する
+	JMX を有効にする必要がある。
+    5. jvisualvm を利用する
+	上記と同様 JMX を有効にする必要がある。
+
+    JMX を有効にする方法。以下のシステムプロパティを指定して JVM を起動する。
+	「-Dcom.sun.management.jmxremote=true
+        　-Dcom.sun.management.jmxremote.port=7000
+          -Dcom.sun.management.jmxremote.ssl=false
+          -Dcom.sun.management.jmxremote.authenticate=false」
+
 ## スレッドダンプの読み方
 ## どのようなトラブルの調査に利用するのか
 ## jconsole上でスレッドを確認する
