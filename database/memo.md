@@ -8,4 +8,5 @@
 * query usage in mysql client
 ```
 show databases;
+show tables;
 ```
