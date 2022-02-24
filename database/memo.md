@@ -10,3 +10,13 @@
 show databases;
 show tables;
 ```
+
+## MongoDB
+```
+# mongo -u root
+```
+```
+db.collectionName.save(<json>);
+db.collectionName.find();
+db.collectionName.find(<condition json>);
+```
