@@ -35,3 +35,8 @@ HGET hash_test key
 // check key type
 type key
 ```
+```
+・データベースという概念はない
+・「select 1」とかで名前空間を変えることができる(デフォルトは0みたい)
+https://stackoverflow.com/questions/35621324/how-to-create-own-database-in-redis
+```
